@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Decryption</title>
+    <script>
+        window.onload = function() {
+            // Parse the URL parameters
+            var urlParams = new URLSearchParams(window.location.search);
+            var password = urlParams.get('password');
+            var encryptedString = urlParams.get('string');
+
+            // TODO: Use the Web Crypto API and the password to decrypt the string
+
+            // Display the decrypted string
+            document.getElementById('output').innerText = 'Decrypted string: ' + decryptedString;
+        };
+    </script>
+</head>
+<body>
+    <h1>Decryption</h1>
+    <p id="output"></p>
+</body>
+</html>
