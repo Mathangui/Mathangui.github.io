@@ -3,13 +3,13 @@
 <head>
     <title>Decryption</title>
     <script>
-        function encrypt() {
+        function encrypt(inputText) {
             var inputText = document.getElementById('inputText').value;
             var outputText = btoa(inputText); // Simple Base64 encryption
             document.getElementById('output').innerText = 'Encrypted text: ' + outputText;
         }
 
-        function decrypt() {
+        function decrypt(inputText) {
             var inputText = document.getElementById('inputText').value;
             var outputText = atob(inputText); // Simple Base64 decryption
             document.getElementById('output').innerText = 'Decrypted text: ' + outputText;
@@ -21,9 +21,9 @@
             var encryptedString = urlParams.get('string');
             var mode = urlParams.get('mode');
             if (mode === "decrypt") {
-                decrypt(password, encryptedString);
+                decrypt(urlParams.get('string'));
             } else if (mode === "encrypt"){
-                encrypt(password, encryptedString);
+                encrypt(urlParams.get('string'));
             }
             else {
                 document.getElementById('output').innerText = 'Invalid mode';
