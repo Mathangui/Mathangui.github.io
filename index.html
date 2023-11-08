@@ -4,13 +4,11 @@
     <title>Decryption</title>
     <script>
         function encrypt(inputText) {
-            var inputText = document.getElementById('inputText').value;
             var outputText = btoa(inputText); // Simple Base64 encryption
             document.getElementById('output').innerText = 'Encrypted text: ' + outputText;
         }
 
         function decrypt(inputText) {
-            var inputText = document.getElementById('inputText').value;
             var outputText = atob(inputText); // Simple Base64 decryption
             document.getElementById('output').innerText = 'Decrypted text: ' + outputText;
         }
